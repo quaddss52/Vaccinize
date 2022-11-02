@@ -3,7 +3,10 @@
 function App() {
   return (
     <>
-      <h1>Vaccinize</h1>
+    <div className="bg-purple-500">
+      <h1 className="text-xs">Vaccinizer</h1>
+
+    </div>
     </>
   );
 }
