@@ -12,9 +12,12 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
+
       <div className="h-screen">
         <Header />
 
+
+        <Header />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
