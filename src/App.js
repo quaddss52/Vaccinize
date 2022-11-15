@@ -14,8 +14,8 @@ function App() {
     <Router>
       <div className="flex flex-col justify-between h-screen">
 
-        <Header />
 
+        <Header />
         <main>
           <Routes>
             <Route path = '/' element={<Home/>}/>
