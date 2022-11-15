@@ -15,17 +15,24 @@ body {
   font-family: "Inter", sans-serif;
   height: 100vh;
 }
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
 
 .header {
   width: 100%;
   top: 0;
   right: 0;
-  display: flex;
-  justify-content: space-between;
+
   align-items: center;
   background: rgba(36, 75, 130, 0.1);
   padding: 28px 12%;
   transition: all 0.5s ease;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
@@ -49,9 +56,14 @@ body {
   line-height: 17px;
   color: #898989;
   margin: 0px 30px;
+  padding: 0.5rem;
 }
 
 .navbar li:hover {
+  color: #244b82;
+}
+
+.navbar .current {
   color: #244b82;
 }
 
@@ -104,36 +116,34 @@ body {
   opacity: 70%;
 }
 
-
-.section-title{
-    font-weight:900;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    color: white;
+.section-title {
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: white;
+  padding: 0.2rem;
 }
-.footer{
-    background-color: rgba(36, 75, 130, 0.81);
-    z-index: 1000;
-}
-
-.footer-container{
-    max-width: 700px;
-    margin: auto;
+.footer {
+  background-color: rgba(36, 75, 130, 0.81);
 }
 
-.footer-content{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2.5rem;
+.footer-container {
+  max-width: 700px;
+  margin: auto;
 }
 
-.footer-section-content{
-    display: flex;
-    flex-direction: column;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2.5rem;
 }
-.footer-options{
-   
-    color: #D0D0D0;
-    ; }
 
+.footer-section-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem;
+}
+.footer-options {
+  color: #d0d0d0;
+}
