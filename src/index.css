@@ -2,11 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-font-family: Arial, Helvetica, sans-serif;
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Inter:wght@400;700&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+}
+
+.header {
+  width: 100%;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(36, 75, 130, 0.1);
+  padding: 28px 12%;
+  transition: all 0.5s ease;
+}
+
+.logo {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  color: #244b82;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar li {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #898989;
+  margin: 0px 30px;
+}
+
+.navbar li:hover {
+  color: #244b82;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+}
+
+.main .btn-0 {
+  margin-right: 25px;
+  margin-left: 10px;
+}
+
+.main .btn-secondary {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #244b82;
+  border: 1px solid #244b82;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .btn-primary {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  background: #244b82;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .btn-primary:hover {
+  opacity: 80%;
+}
+.main .btn-secondary:hover {
+  opacity: 70%;
+}
+
+
 .section-title{
     font-weight:900;
     line-height: 1.5;
@@ -37,4 +136,6 @@ font-family: Arial, Helvetica, sans-serif;
 .footer-options{
    
     color: #D0D0D0;
+
     ; }
+

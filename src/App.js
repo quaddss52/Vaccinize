@@ -1,3 +1,4 @@
+import Header from "./components/Header";
 import {BrowserRouter as Router , Routes, Route} from 'react-router-dom'
 import Home from './pages/Home';
 import Blog from './pages/Blog';
@@ -7,13 +8,14 @@ import HelpCenter from './pages/HelpCenter';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Footer from './components/Footer';
-import Header from './components/Header'
+
 function App() {
   return (
-    <>
     <Router>
       <div className="flex flex-col justify-between h-screen">
-        <Header/>
+
+
+        <Header />
         <main>
           <Routes>
             <Route path = '/' element={<Home/>}/>
@@ -28,7 +30,6 @@ function App() {
       <Footer/>
       </div>
     </Router>
-    </>
   );
 }
 
