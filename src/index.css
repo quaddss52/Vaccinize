@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Inter:wght@400;700&display=swap");
 
 * {
@@ -23,8 +22,6 @@ body {
 
 .header {
   width: 100%;
-  top: 0;
-  right: 0;
 
   align-items: center;
   background: rgba(36, 75, 130, 0.1);
@@ -34,6 +31,7 @@ body {
 .header-content {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .logo {
@@ -74,7 +72,6 @@ body {
 }
 
 .btn-0 {
-  margin-right: 25px;
   margin-left: 10px;
 }
 
@@ -157,6 +154,30 @@ body {
 .colored-text {
   color: #244b82;
 }
+.socialLogin {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.socialIconDiv {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem;
+  margin: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.socialIconImg {
+  width: 100%;
+}
+
 .section-title {
   font-weight: 900;
   line-height: 1.5;
@@ -168,8 +189,6 @@ body {
   background-color: #ffffff;
   width: 45%;
   height: 70%;
-  position: absolute;
-  top: 6rem;
 }
 
 .card-content {
@@ -184,6 +203,7 @@ body {
   box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 
 .sliderCard-content {
@@ -231,7 +251,7 @@ body {
 .about-1 {
   background-color: rgba(73, 107, 241, 0.04);
 }
-.about-column {
+.flex-column {
   display: flex;
   flex-direction: row;
   height: 80vh;
@@ -243,28 +263,28 @@ body {
   height: 100vh;
 }
 
-.about-column .column {
+.flex-column .column {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
   width: 50%;
 }
-.about-column .column .column-1,
-.about-column .column .column-2 {
+.flex-column .column .column-1,
+.flex-column .column .column-2 {
   height: 100%;
 }
-.about-column .column .column-1 {
+.flex-column .column .column-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-.about-column img {
+.flex-column img {
   width: 100%;
   height: 100%;
 }
-.about-column p {
+.flex-column p {
   font-family: "helvetica";
 }
 
@@ -278,19 +298,22 @@ body {
 }
 .about-3 {
   background: linear-gradient(rgba(36, 75, 130, 0.58), rgba(36, 75, 130, 0.58)),
-    url("https://s3-alpha-sig.figma.com/img/49c7/393b/fe86025b126b4b5d5139474a555ea92c?Expires=1669593600&Signature=Y3KLUIrhbsf-qDAnUvxIt1xPRnC8yjgmI2j3HNovqdaPLbUpTAlnpc4tSa33CnU5EIJP5Sb7nDbPV3~MXlH7M2uRuAupbVg5HWOLYIYC5uxbvGvVzcEA2~SAQr7yDbOMPPgWFmQtRaAK4h3~sEoNe~ClXAIHM4es5CiHUBujqk4TPyRHWeXXRFyy8JuqiElJ5HzZVdXpep1oav7XmGMBoa6~JkdpFGdcP8RaCG7OpMhdVWrBSa-k7kYAnn3OGPqHUfF3h1XBdsUA~Xd-2rJ6jRlpnSeBaIeQyaLjT97Lc3sN2LKdmS2uiVfYvZHKGf1LXcj2VbyNKfa5XCsT3ahFsw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    url("https://s3-alpha-sig.figma.com/img/49c7/393b/fe86025b126b4b5d5139474a555ea92c?Expires=1670803200&Signature=OQEpZnGb8FK8jrvNkoOwWv95Z4MdjzIFt2Wng9~mZ4Imhf1x9gQGcSOzt1us3ALKqNHGuE~dyJzH3clzXTarLgU3ifixGdCnEdlYQ8AnNkPJEf3Lal7rNBKE6i4UDZrzb1E14Fz1QNA664qNO3-dnUJtp~7J6KcjCwKo5-sMS4Qk3usPi3r9KpVkp9-s4mx50DVMFhEnRW9nOZJtdGfgL3bKWSz-D8vWRrX1kZpJCsapgfyhz-xS451fwbVGv02woF4SlqW~vYOcpLarEiBh4wm0gbIa0kio8nKepVc9GLHPEFFKFApRazGxUHs7gdi6fsIMH0L4YW7f4jnyFUT0jw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
   height: 70vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
-
+.about3-content {
+  position: absolute;
+  top: 6rem;
+}
 .about-4 {
   background-color: #fafafa;
   padding: 10px;
   height: 80vh;
 }
-.about-4 .about-column {
+.about-4 .flex-column {
   height: 80vh;
 }
 .about-4 .groupie {
@@ -299,14 +322,14 @@ body {
   width: 60%;
   object-fit: cover;
 }
-.about-4 .about-column .column-1,
-.about-4 .about-column .column-2 {
+.about-4 .flex-column .column-1,
+.about-4 .flex-column .column-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.about-4 .about-column .column-2 {
+.about-4 .flex-column .column-2 {
   align-items: flex-start;
 }
 .about-5 {
@@ -321,6 +344,90 @@ body {
   align-items: center;
   width: 50%;
   margin: 0 auto;
+}
+/* Signup page */
+.sign-up {
+  background: rgba(73, 107, 241, 0.04);
+  padding: 3rem;
+  height: 100vh;
+}
+.signup-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup-content .card {
+  height: 95%;
+  width: 100%;
+  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.signup-content .card .card-content .nameInput,
+.signup-content .card .card-content .emailInput {
+  display: block;
+  padding: 10px;
+  margin-bottom: 2rem;
+  border: #244b82 solid 1px;
+  border-radius: 10px;
+  width: 100%;
+}
+.passwordInputDiv {
+  position: relative;
+}
+
+.passwordInput {
+  margin-bottom: 2rem;
+  /* background: url("./assets/svg/lockIcon.svg") #ffffff 2.5% center no-repeat; */
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: #244b82 solid 1px;
+}
+
+.showPassword {
+  cursor: pointer;
+  position: absolute;
+  top: 4%;
+  right: 1%;
+  padding: 1rem;
+}
+.forgotPasswordLink {
+  cursor: pointer;
+  color: #244b82;
+  font-weight: 600;
+  text-align: right;
+  margin-top: 2rem;
+}
+.emailInput {
+  display: block;
+  padding: 10px;
+  margin-bottom: 2rem;
+  border: #244b82 solid 1px;
+  border-radius: 10px;
+  width: 100%;
+}
+/* Forgot password */
+
+.forgot-password {
+  height: 80vh;
+  background-color: rgba(73, 107, 241, 0.04);
+}
+.forgotPassword-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgotPassword-content .card {
+  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 
 /* Footer */
@@ -348,8 +455,6 @@ body {
 .footer-options {
   color: #d0d0d0;
 }
-.footer-options{
-   
-    color: #D0D0D0;
-
-    ; }
+.footer-options {
+  color: #d0d0d0;
+}

@@ -1,7 +1,5 @@
 import phoneOne from "../assets/svg/phoneOne.svg";
 import { Link } from "react-router-dom";
-import customers from "../data";
-import Slider from "../components/Slider";
 import Subscribe from "../components/Subscribe";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, A11y } from "swiper";
@@ -13,7 +11,7 @@ function About() {
       <div className="about">
         <div className="about-1">
           <div className="container">
-            <div className="about-column">
+            <div className="flex-column">
               <div className="column">
                 <div className="column-1">
                   <div className="page-title text-4xl">About Vaccinize</div>
@@ -41,7 +39,7 @@ function About() {
         </div>
         <div className="about-2">
           <div className="container">
-            <div className="about-column mt-12">
+            <div className="flex-column mt-12">
               <div className="column">
                 <div className="column-1">
                   <img
@@ -99,7 +97,7 @@ function About() {
                     </p>
                   </div>
                   <img
-                    src="https://s3-alpha-sig.figma.com/img/9a18/35f2/4ba868916cb1ab097ad681cc3a294602?Expires=1669593600&Signature=LVCIbFAb9vcKSK0OuNqV5aEWa2oA94vW4Ii6qHrg~qLNoGWBmAytdJIfyVV7n4JynECSJFiSPXj8ouSVhMp3jSFR0jeJnZliFTun8vVR9jWi9lI3888Lq~41p76gu9gUwpYaNU4vtSI6dU-QypX1oghdG18hVzyrrntK7JEHrPIiiUXnk8qXI87HUronw7TdCooaKnrY4BytidTaP~RuG1ChYs~DL5nt3mBGtT3j1YzF-hTAHMJa5nbgyrqIxsR6wsvrAj46r1B42KKZKtK8G72mXYsmjwyy4UvE6ePLAU8LJ4vdrdjvg7~zrRd~LaKCKoicTgb3c8X37WHUJy9RRQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                    src="https://s3-alpha-sig.figma.com/img/9a18/35f2/4ba868916cb1ab097ad681cc3a294602?Expires=1670803200&Signature=ErxDtDIdqO1wpnGNpg8sQUma1fCk99JnLLwFcJADJIDszSrza07R31c~qY0v6zRtQvUCnuKqkeCSxB1lfzZyB~6qWlcGPFOV0rQGTpEsEUgoUI952igrDFyLJ9qb8hD6X0cUNYNGpURENtWKbrmoOQBiiePaIAIcsB6-hbQbItJIKOZTzuX59QP1KZG3~h1lLsorQQ5BvdT2uZEMq7YD2AcyJmaSYSPfNOLKO8ImF-XdJ4a84pW02kbWUuFHTzGwXFRvX19OtT5keimdQnGrSDcwnOalQIk6YCofo7YlYNtjsWog~fpWMePmCE5yJbMS5nqZB4DvVEn7Ent9YkdbHw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
                     alt="doctor"
                     className="doctor-phone"
                   />
@@ -110,7 +108,7 @@ function About() {
         </div>
         <div className="about-3">
           <div className="container">
-            <div className="card">
+            <div className="card about3-content">
               <div className="card-content py-12 px-12">
                 <p className="text-2xl page-title mb-12">Need any Help?</p>
                 <p className=" font-light py-3 mb-12 pr-8">
@@ -127,11 +125,11 @@ function About() {
         </div>
         <div className="about-4">
           <div className="container">
-            <div className="about-column">
+            <div className="flex-column">
               <div className="column">
                 <div className="column-1">
                   <img
-                    src="https://s3-alpha-sig.figma.com/img/f474/9256/e269cccbdfb5bd5958e1feb5eb8014a8?Expires=1669593600&Signature=c~OUAhWV5Jxc~IdLxgvIDWVjI8WZ3RWgLXcFbcXSa51N8o1efvDzndMsBRnFrxlEVUBEuo2GPK~E8G2enT6W9cPsvbmkSN-fcGxaOMRQfoL~OOd5~GL2ksxnkcupc50YJ1YTKbN31svIoKs8KYfNKo6pkgSHAdYq8TyrfoufDxcLWoVlCuws5y01JjOpUrbDtNaa2MXgslvzA7jhab4gfGpnkNTL8R77jTEcZKZ-m7dEMIGpKOHRJeLH6~omDdx2ODJF9ibPnK30saeNs4IlfE-VOET6Kgsze8ZOrLRSACum~AlYRde3WYFCrgnZLd17TNkZFlucoNctPXtdk5HaZg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                    src="https://s3-alpha-sig.figma.com/img/f474/9256/e269cccbdfb5bd5958e1feb5eb8014a8?Expires=1670803200&Signature=A34cJbcm7qhDDqJqny4JX5nFA~ayTDtGKWvRZm-BILHaRvJ1d7KaUt5VpKGyW7w4UfIj7FGXPjP55o4-qLSmPMOIv9AUDD0Use9h7VFvqhNXOsqrhqpZ7uVIWs3oeWsjZJ4aPUNyP12cWvELu0mVbArZkL9vKO83y5-lf4PocZFiYF5-ng5rkbPRHXg6IzFpsnJvaKXN~onWctEQlkXV6aXMFZpmreySOBMOPs24mIUwn6Of9BwT~sPNVI8PSy3YxAfoeDeRbxk2uolY~gC0hMbc1jgAS~YgU2r2WfbW9ff1cmJO0pqi38MND7j1-FNAzFDvVHz15Kvhsjm6GM3plg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
                     alt=""
                     className="groupie"
                   />

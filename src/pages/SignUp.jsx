@@ -1,7 +1,15 @@
 import { useState } from "react";
+import phoneOne from "../assets/svg/phoneOne.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
-import visibilityIcon from "../assets/svg/visibilityIcon.svg";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase.config";
+import { toast } from "react-toastify";
+import Oauth from "../components/Oauth";
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -9,9 +17,10 @@ function SignUp() {
     name: "",
     email: "",
     password: "",
+    password2: "",
   });
 
-  const { name, email, password } = formData;
+  const { name, email, password, password2 } = formData;
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -24,90 +33,110 @@ function SignUp() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    // try {
-    //   const auth = getAuth();
+    if ((password.length && password2.length) < 6) {
+      toast.error("Password needs to be at least 6 characters");
+    }
 
-    //   const userCredential = await createUserWithEmailAndPassword(
-    //     auth,
-    //     email,
-    //     password
-    //   );
+    if (password !== password2) {
+      toast.error("Ensure Passwords match");
+    } else {
+      try {
+        const auth = getAuth();
 
-    //   const user = userCredential.user;
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
 
-    //   updateProfile(auth.currentUser, {
-    //     displayName: name,
-    //   });
-    //   const formDataCopy = { ...formData };
-    //   delete formDataCopy.password;
-    //   formDataCopy.timestamp = serverTimestamp();
+        const user = userCredential.user;
 
-    //   await setDoc(doc(db, "users", user.uid), formDataCopy);
-    //   navigate("/");
-    // } catch (error) {
-    //   toast.error("Something went wrong");
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        });
+        const formDataCopy = { ...formData };
+        delete formDataCopy.password;
+        formDataCopy.timestamp = serverTimestamp();
+
+        await setDoc(doc(db, "users", user.uid), formDataCopy);
+        navigate("/");
+      } catch (error) {
+        toast.error("Something went wrong");
+        console.log(error);
+      }
+    }
   };
 
   return (
     <>
-      <div className="container">
-        <header className="page-title text-4xl">Welcome to Vaccinize!</header>
+      <div className="sign-up  mb-3">
+        <div className="container">
+          <div className="signup-content">
+            <div className="flex-column">
+              <div className="column">
+                <div className="column-1 ">
+                  <img src={phoneOne} alt="" className="mt-20" />
+                </div>
+              </div>
+              <div className="column">
+                <div className="column-2">
+                  <p className="page-title text-4xl text-center w-full mt-6 ">
+                    Welcome to Vaccinize!
+                  </p>
+                  <div className="card">
+                    <div className="card-content px-6 py-12">
+                      <form onSubmit={onSubmit}>
+                        <input
+                          type="text"
+                          className="nameInput"
+                          placeholder="Enter your name."
+                          id="name"
+                          value={name}
+                          onChange={onChange}
+                        />
 
-        <form onSubmit={onSubmit}>
-          <input
-            type="text"
-            className="nameInput"
-            placeholder="Enter your name."
-            id="name"
-            value={name}
-            onChange={onChange}
-          />
+                        <input
+                          type="email"
+                          className="emailInput"
+                          placeholder="Enter your email."
+                          id="email"
+                          value={email}
+                          onChange={onChange}
+                        />
 
-          <input
-            type="email"
-            className="emailInput"
-            placeholder="Enter your email."
-            id="email"
-            value={email}
-            onChange={onChange}
-          />
-
-          <div className="passwordInputDiv">
-            <input
-              type={showPassword ? "text" : "password"}
-              className="passwordInput"
-              placeholder="Password"
-              id="password"
-              value={password}
-              onChange={onChange}
-            />
-            <img
-              src={visibilityIcon}
-              alt="Show password"
-              className="showPassword"
-              onClick={() =>
-                setShowPassword((prevState) => {
-                  return !prevState;
-                })
-              }
-            />
+                        <div className="passwordInputDiv">
+                          <input
+                            type="password"
+                            className="passwordInput"
+                            placeholder="Password"
+                            id="password"
+                            value={password}
+                            onChange={onChange}
+                          />
+                        </div>
+                        <div className="passwordInputDiv">
+                          <input
+                            type="password"
+                            className="passwordInput"
+                            placeholder=" Confirm Password"
+                            id="password2"
+                            value={password2}
+                            onChange={onChange}
+                          />
+                        </div>
+                        <button className="btn-primary w-4/5 text-center mx-auto mb-12">
+                          {" "}
+                          Sign Up
+                        </button>
+                      </form>
+                      <Oauth />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <Link to="/forgot-password" className="forgotPasswordLink">
-            {" "}
-            Forgot password?
-          </Link>
-          <div className="signUpBar">
-            <p className="signUpText">Sign Up</p>
-
-            <button className="signUpButton">
-              <FaArrowRight fill="#fff" width="34px" height="34px" />
-            </button>
-          </div>
-        </form>
-        {/* <Oauth /> */}
-        <Link to="/sign-in" className="registerLink">
-          Already have an account??
-        </Link>
+        </div>
       </div>
     </>
   );
