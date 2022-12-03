@@ -43,7 +43,7 @@ function About() {
               <div className="column">
                 <div className="column-1">
                   <img
-                    src="https://s3-alpha-sig.figma.com/img/5404/a2d5/7dbe3e6ed751b30f35e0ea423e621231?Expires=1669593600&Signature=Mde70-YhK6GHyB-25nU3wzF30tfj9yH-xz8ICLurZg~aiWg0AHKTNL5HcTYfOw9bc2kV-~-qVC3Wz0KRj3YDYRfMSfba6btII0O1R0idBy0vK66Aw5fxNESD7S~4Agw1ZpcZa5aijyksvXnAbnnFwUIMZuvseddvC-E0K3Izxp2a-UKt1di93OgnrkGaVcQM-8s7s47wv3mGke~VIutGAHVip2UvCFzvdGeux5NpnAvzfcGjEPqeBML1yiTnliXz5FD7iFrzrE9AgBMlLHnUGe3REYMXKCNJB2IHQ9X9iGIUyCjFep9XimYEoYaJpO5SyMEYfwlo-P7V3Ez-HpY0uw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                    src="https://s3-alpha-sig.figma.com/img/5404/a2d5/7dbe3e6ed751b30f35e0ea423e621231?Expires=1670803200&Signature=IwjhrGx26vf9qT7Bqau5Q~sTe9vHDQVrNgwc~ytIsNVn6m53WuvOtI3q50OlvH71JqJe8fQykEezVbxCFtnvQ4H~U3qutLPZcotrEPwTwpAgR4kxADUTALJhKcwkstoIeR9iYC~WOJtVkFEah4jXZTA1BCbqvxgEeANUHJP5vmFCRXYOq4swpjTuLcVeFJARMf0aJhH1xEIbqUd~8eclCMjNST~UJK-UbS3IoqkoVGMTUvgN8YZUFPC~cJNQzgvNAuPB9noeFPxg64vkG-rKib5O8mjQl7Zg9kvhui~Lit1xmDcKTmSxxmD10VMTHcwLrmB2g~VhNr4DGyOpfrW0~w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
                     alt="gloves"
                     className="gloves-img mb-10"
                   />
