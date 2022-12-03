@@ -1,8 +1,10 @@
-
+import Slider from "../components/Slider";
 function HelpCenter() {
   return (
-    <div>HelpCenter</div>
-  )
+    <div>
+      <Slider />
+    </div>
+  );
 }
 
-export default HelpCenter
+export default HelpCenter;
