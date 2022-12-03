@@ -10,6 +10,7 @@ import HelpCenter from "./pages/HelpCenter";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Footer from "./components/Footer";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   return (
@@ -27,9 +28,10 @@ function App() {
               <Route path="/help-center" element={<HelpCenter />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signUp" element={<SignUp />} />
+              <Route path="/forgotPassword" element={<ForgotPassword />} />
             </Routes>
           </main>
-          <Footer className="" />
+          <Footer />
         </div>
       </Router>
       <ToastContainer />
